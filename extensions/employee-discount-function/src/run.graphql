@@ -1,0 +1,30 @@
+query RunInput {
+  cart {
+    buyerIdentity{
+      customer{
+        displayName
+        email
+      }
+    }
+    lines {
+      id
+      quantity
+      cost{
+        totalAmount{
+          amount
+        }
+      }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          title
+          employeePrice: metafield( namespace: "custom" key: "employee_price"
+          ) {
+            jsonValue
+          }
+        }
+      }
+    }
+  }
+}
