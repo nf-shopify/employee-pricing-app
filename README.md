@@ -1,16 +1,13 @@
-# Shopify App Template - Extension only
+# Shopify Function Template - Product Discount Function (app with extensions only)
+### Use Case - Apply Employee Pricing as a discount on the line item
 
-This is a template for building an [extension-only Shopify app](https://shopify.dev/docs/apps/build/app-extensions/build-extension-only-app). It contains the basics for building a Shopify app that uses only app extensions.
+This template is for creating a Product Discount Function that checks if the customer is an employee. If they are, the function will apply an employee discount, but only if the line item has the employee price metafield filled out. This app does not include an app home UI.
 
-This template doesn't include a server or the ability to embed a page in the Shopify Admin. If you want either of these capabilities, choose the [Remix app template](https://github.com/Shopify/shopify-app-template-remix) instead.
+It contains the basics for building a Shopify app that uses only app extensions.
 
-Whether you choose to use this template or another one, you can use your preferred package manager and the Shopify CLI with [these steps](#installing-the-template).
+(https://shopify.dev/docs/apps/getting-started)
 
-## Benefits
-
-Shopify apps are built on a variety of Shopify tools to create a great merchant experience. The [create an app](https://shopify.dev/docs/apps/getting-started/create) tutorial in our developer documentation will guide you through creating a Shopify app.
-
-This app template does little more than install the CLI and scaffold a repository.
+(https://shopify.dev/docs/apps/build/discounts/build-discount-function)
 
 ## Getting started
 
@@ -20,41 +17,23 @@ This app template does little more than install the CLI and scaffold a repositor
 1. You must [create a Shopify partner account](https://partners.shopify.com/signup) if you don’t have one.
 1. You must create a store for testing if you don't have one, either a [development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) or a [Shopify Plus sandbox store](https://help.shopify.com/en/partners/dashboard/managing-stores/plus-sandbox-store).
 
-### Installing the template
-
-This template can be installed using your preferred package manager:
-
-Using yarn:
-
-```shell
-yarn create @shopify/app
+### Clone the project
 ```
-
-Using npm:
-
-```shell
-npm init @shopify/app@latest
+git clone https://github.com/nf-shopify/employee-pricing-app.git
 ```
+You can find function within extensions/employee-discount-function
 
-Using pnpm:
+### Prerequisites
 
-```shell
-pnpm create @shopify/app@latest
-```
+1. Creation of a decimal metafield on the varirant object to employee pricing.
+![Location Metafield](https://screenshot.click/26-34-wgrrf-9xivo.jpg)
 
-This will clone the template and install the required dependencies.
 
-#### Local Development
+### Local Development
 
-[The Shopify CLI](https://shopify.dev/docs/apps/tools/cli) connects to an app in your Partners dashboard. It provides environment variables and runs commands in parallel.
+[The Shopify CLI](https://shopify.dev/docs/apps/tools/cli) connects to an app in your Partners dashboard. It provides environment variables and runs commands in parallel..
 
 You can develop locally using your preferred package manager. Run one of the following commands from the root of your app.
-
-Using yarn:
-
-```shell
-yarn dev
-```
 
 Using npm:
 
@@ -62,17 +41,12 @@ Using npm:
 npm run dev
 ```
 
-Using pnpm:
+Open the URL generated in your console. Once you grant permission to the app, you can start to to test the function in your store.
 
-```shell
-pnpm run dev
-```
-
-Open the URL generated in your console. Once you grant permission to the app, you can start development (such as generating extensions).
 
 ## Developer resources
 
 - [Introduction to Shopify apps](https://shopify.dev/docs/apps/getting-started)
-- [App extensions](https://shopify.dev/docs/apps/build/app-extensions)
-- [Extension only apps](https://shopify.dev/docs/apps/build/app-extensions/build-extension-only-app)
+- [App authentication](https://shopify.dev/docs/apps/auth)
 - [Shopify CLI](https://shopify.dev/docs/apps/tools/cli)
+- [Shopify API Library documentation](https://github.com/Shopify/shopify-api-js#readme)
