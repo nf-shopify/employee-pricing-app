@@ -3,7 +3,7 @@
 
 This template is for creating a Product Discount Function that checks if the customer is an employee. If they are, the function will apply an employee discount, but only if the line item has the employee price metafield filled out. This app does not include an app home UI.
 
-It contains the basics for building a Shopify app that uses only app extensions.
+It contains the basics for building a Shopify app that only uses app extensions (functions).
 
 (https://shopify.dev/docs/apps/getting-started)
 
